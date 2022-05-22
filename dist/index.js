@@ -8876,9 +8876,9 @@ let fileContent = fs.readFileSync(filePath, 'utf8');
 
 // return temperature as output
 if (raw) {
-    core.setOutput('temperature', fileContent.split('t=')[1] / 1000);
-} else {
     core.setOutput('temperature', fileContent);
+} else {
+    core.setOutput('temperature', fileContent.split('t=')[1] / 1000);
 }
 })();
 
