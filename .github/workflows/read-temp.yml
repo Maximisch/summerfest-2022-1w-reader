@@ -8,6 +8,8 @@ jobs:
     runs-on: raspberrypi
     name: Read the temperature
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Read the temperature for default sensor
         id: read_temp
         uses: ./
