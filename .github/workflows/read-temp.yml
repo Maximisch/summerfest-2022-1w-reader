@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Read the temperature for default sensor
         id: read_temp
-        uses: @maximisch/summerfest-2022-1w-reader@main
+        uses: ./
         with:
           thermometer-id: ${{ secrets.THERMOMETER_ID }}
       - name: Output thermometer
