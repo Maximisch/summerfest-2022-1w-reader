@@ -1,0 +1,17 @@
+name: Read temperature
+
+on:
+  workflow_dispatch:
+
+jobs:
+  read-temp:
+    runs-on: raspberrypi
+    name: Read the temperature
+    steps:
+      - name: Read the temperature for default sensor
+        id: read_temp
+        uses: @maximisch/summerfest-2022-1w-reader@main
+        with:
+          thermometer-id: ${{ secrets.THERMOMETER_ID }}
+      - name: Output thermometer
+        run: echo ${{ steps.read_temp.outputs.temperature }}
