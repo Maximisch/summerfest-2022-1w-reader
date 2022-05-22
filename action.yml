@@ -1,0 +1,19 @@
+name: Read temperature
+author: maximisch
+description: 'Reads the temperature of a connected 1-wire bus thermometer, output in double'
+branding:
+  icon: 'thermometer'
+  color: yellow
+inputs:
+  thermometer-id:
+    description: 'ID of the thermometer'
+    required: true
+  raw:
+    description: 'Output raw reading'
+    required: false
+    default: false
+outputs:
+  temperature:
+    description: 'Measured temperature'
+runs:
+  using: 'node12'
